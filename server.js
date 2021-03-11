@@ -32,7 +32,7 @@ app.get('/gg', async (req, res) => {
   res.json(total);
 })
 // routes middleware
-// readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
+readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
 // app.use(express.static(path.join(__dirname, "../client", "build")))
 
 // //serve
