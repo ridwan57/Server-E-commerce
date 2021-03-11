@@ -28,7 +28,7 @@ app.use(bodyParser.json({ limit: "2mb" }));
 app.use(cors());
 
 // routes middleware
-readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
+// readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
 // app.use(express.static(path.join(__dirname, "../client", "build")))
 
 // //serve
