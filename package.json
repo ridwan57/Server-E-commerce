@@ -4,12 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "cd ../client && npm run build",
-    "start": "node server.js",
-    "client":"cd ../client && npm start",
-    "install-client": "cd ../client && npm install",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm run install-client && npm run build",
-    "dev": "concurrently \"nodemon server.js\" \"npm run client \""
+  
+    "start": "node server.js"
+    
   
   },
   "keywords": [],
