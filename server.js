@@ -26,7 +26,9 @@ mongoose
 app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "2mb" }));
 app.use(cors());
-
+app.get('/gg', (req, res) => {
+  res.json('I am here')
+})
 // routes middleware
 // readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
 // app.use(express.static(path.join(__dirname, "../client", "build")))
