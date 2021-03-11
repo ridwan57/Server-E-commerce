@@ -28,13 +28,13 @@ app.use(bodyParser.json({ limit: "2mb" }));
 app.use(cors());
 
 // routes middleware
-readdirSync("./server/routes").map((r) => app.use("/api", require("./routes/" + r)));
-app.use(express.static(path.join(__dirname, "../client", "build")))
+readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
+// app.use(express.static(path.join(__dirname, "../client", "build")))
 
 // //serve
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.join(__dirname, "../client", "build", "index.html"));
+// });
 
 // port
 const port = process.env.PORT || 8080;
