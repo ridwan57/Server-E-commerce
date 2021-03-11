@@ -4,7 +4,8 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const { readdirSync } = require("fs");
-const path = require('path')
+const path = require('path');
+const product = require("./models/product");
 require("dotenv").config();
 
 // app
@@ -26,8 +27,9 @@ mongoose
 app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "2mb" }));
 app.use(cors());
-app.get('/gg', (req, res) => {
-  res.json('I am here')
+app.get('/gg', async (req, res) => {
+  let total = await product.find({}).estimatedDocumentCount().exec();
+  res.json(total);
 })
 // routes middleware
 // readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
