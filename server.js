@@ -28,8 +28,8 @@ app.use(morgan("dev"));
 app.use(bodyParser.json({ limit: "2mb" }));
 app.use(cors());
 app.get('/gg', async (req, res) => {
-  let total = await product.find({}).estimatedDocumentCount().exec();
-  res.json(total);
+  // let total = await product.find({}).estimatedDocumentCount().exec();
+  res.json("I am here");
 })
 // routes middleware
 readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
